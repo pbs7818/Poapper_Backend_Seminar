@@ -1,0 +1,14 @@
+{
+    "name": "Park Bumsoon",
+    "job": "undergraduate",
+    "age": 21,
+    "hobby": ["computer games", "soccer"],
+    "course_table": [
+        {"name": "Introduction to Computer SW systems", "id": "CSED211"},
+        {"name": "Data Structure", "id": "CSED233"},
+        {"name": "Self-Enlightment for Computer Scientists", "id": "CSED291"},
+        {"name": "Automata and Formal Languages", "id": "CSED341"},
+        {"name": "Probability and Statistics", "id": "MATH230"},
+        {"name": "Science Communication", "id": "CMST402"}
+    ]
+}
