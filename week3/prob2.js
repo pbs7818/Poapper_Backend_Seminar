@@ -1,28 +1,34 @@
 const http = require('http')
 
-var num1;
-var num2;
-
 const server = http.createServer((req, res) => {
+    const parsed_url = req.url.split('/');
+
+    const operator = parsed_url[1];
+    const num1 = parsed_url[2];
+    const num2 = parsed_url[3];
+
     console.log(req.url)
-    if(req.url == `/add/${num1}/${num2}`) {
-        var result = Number(num1) + Number(num2);
-        res.write(result);
+
+    let result
+
+    if(operator == 'add') {
+        result = String(Number(num1) + Number(num2))
+        res.write(`<h1>${result}<h1>`);
         res.end();
     }
-    else if(req.url == `/sub/${num1}/${num2}`) {
-        var result = Number(num1) - Number(num2);
-        res.write(result);
+    else if(operator == 'sub') {
+        result = String(Number(num1) - Number(num2))
+        res.write(`<h1>${result}<h1>`);
         res.end();
     }
-    else if(req.url == `/mul/${num1}/${num2}`) {
-        var result = Number(num1) * Number(num2);
-        res.write(result);
+    else if(operator == 'mul') {
+        result = String(Number(num1) * Number(num2))
+        res.write(`<h1>${result}<h1>`);
         res.end();
     }
-    else if(req.url == `/div/${num1}/${num2}`) {
-        var result = Number(num1) / Number(num2);
-        res.write(result);
+    else if(operator == 'div') {
+        result = String(Number(num1) / Number(num2))
+        res.write(`<h1>${result}<h1>`);
         res.end();
     }
 })
